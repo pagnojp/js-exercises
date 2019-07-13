@@ -10,12 +10,23 @@
   <button>Add div</button>
   <script>
     let btn = document.querySelector('button')
-    btn.style.cssText = "display: flex;"
+    btn.style.cssText = "display: block;"
     btn.onclick = function () {
       let newDiv = document.createElement('div')    
       btn.after(newDiv)
-      newDiv.style.cssText = "background-color: Seagreen; display: inline-flex; width: 100px; height: 100px; margin: 10px;"    
-    }          
+      newDiv.style.cssText = "align-items: center; background-color: Seagreen; display: flex; float: left; margin: 10px; width: 100px; height: 100px;"    
+      if (newDiv) {
+        newDiv.onmouseover = function () {
+          let letters = "0123456789ABCDEF"  
+          let color = "#"
+          for (let i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)]
+          }
+          newDiv.style.backgroundColor = color
+          newDiv.textContent = color
+        }    
+      }
+    }
   </script>
 </body>
 </html>
