@@ -7,15 +7,25 @@
     <title>DOM Exercises</title>
 </head>
 <body>
+  <input type="text" name="name">
+  <button>Add Name</button>
   <script>
     const names = ["João", "Pedro", "Victor"]
-    namesList = document.createElement("ul")
+    let namesList = document.createElement("ul")
     names.map(name => {
-      item = document.createElement("li")
+      let item = document.createElement("li")
       document.body.appendChild(namesList)
       namesList.appendChild(item)
       item.innerText = name
     });
+    let btn = document.querySelector('button')
+    btn.onclick = function() {
+      let newName = document.querySelector('input').value
+      let newItem = document.createElement("li")
+      namesList.appendChild(newItem)
+      newItem.innerText = newName
+      document.querySelector('input').value = ''
+    }  
   </script>
 </body>
 </html>
