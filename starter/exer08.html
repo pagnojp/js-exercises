@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM Exercises</title>
+</head>
+<body>
+  <script>
+    const names = ["João", "Pedro", "Victor"]
+    namesList = document.createElement("ul")
+    names.map(name => {
+      item = document.createElement("li")
+      document.body.appendChild(namesList)
+      namesList.appendChild(item)
+      item.innerText = name
+    });
+  </script>
+</body>
+</html>
