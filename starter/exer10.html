@@ -14,14 +14,15 @@
   <script>
     let btn = document.querySelector('button')
     btn.onclick = function(user) {
-      
-      let repoName = document.querySelector('input')
-
-      let url = 'https://api.github.com/users/'+repoName.value+'/repos';
-        axios.get(url)  
-        .then(function (response) {
-          if (document.contains(document.querySelector('ul'))) {
+      if (document.contains(document.querySelector('ul'))) {
             document.querySelector('ul').remove();
+      }
+      let repoName = document.querySelector('input')
+      let url = 'https://api.github.com/users/'+repoName.value+'/repos'
+      axios.get(url)  
+        .then(function (response) {
+          if (document.contains(document.querySelector('p'))) {
+            document.querySelector('p').remove();
           }
           let repoList = document.createElement("ul")
           response.data.map(repo => {
@@ -33,7 +34,10 @@
           })
         })
         .catch(function (error) {
-          console.log(error);
+          let errorMessage = document.createElement("p")
+          document.body.appendChild(errorMessage)
+          errorMessage.innerText = error
+          repoName.value = ''
         })
     }
   </script>
