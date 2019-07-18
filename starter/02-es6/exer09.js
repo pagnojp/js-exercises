@@ -1,4 +1,4 @@
-const axios = require('axios');
+const axios = require('axios')
 async function getUser(user) {
   try {
     const response = await axios.get(`https://api.github.com/users/${user}`)
