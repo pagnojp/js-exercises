@@ -1,0 +1,73 @@
+.productsList {
+  max-width: 700px;
+  margin: 20px auto 0;
+  padding: 0 20px;
+}
+
+.productsList article {
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.productsList article h2 {
+  font-size: 1rem;
+}
+
+.productsList article p {
+  font-size: .9rem;
+  color: #999999;
+  line-height: 26px;
+}
+
+.productsList article a {
+  background: none;
+  border: 2px solid #da552f;
+  border-radius: 5px;
+  color: #da552f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  height: 30px;
+  margin-top: 10px;
+  font-weight: 600;
+  width: 100%;
+}
+
+.productsList article a:hover {
+  background: #da552f;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.productsList .actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.productsList .actions button {
+  padding: 10px;
+  border-radius: 5px;
+  background: #da552f;
+  border: 0;
+  color: #ffffff;
+}
+
+.productsList .actions button:hover {
+  cursor: pointer;
+}
+
+.productsList .actions button[disabled] {
+  opacity: .5;
+  cursor: default;
+}
+
+.productsList .totalPages {
+  line-height: 34px;
+  font-size: .80rem;
+  color: #999999;
+}
