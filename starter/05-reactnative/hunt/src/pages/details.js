@@ -1,12 +1,18 @@
 import React from "react";
 import { View, Text } from "react-native";
 
-export default class DetailsScreen extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Details Screen</Text>
-      </View>
-    );
-  }
-}
+const DetailsScreen = ({ navigation }) => (
+  <View>
+    <Text>{navigation.state.params.item.description}</Text>
+  </View>
+);
+
+DetailsScreen.navigationOptions = ({ navigation }) => ({
+  title: navigation.state.params.item.title,
+  headerStyle: {
+    backgroundColor: "#DA552F"
+  },
+  headerTintColor: "#FFFFFF"
+});
+
+export default DetailsScreen;
